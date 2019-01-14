@@ -1,0 +1,72 @@
+
+$ mkdir djangogirls
+$ cd djangogirls
+
+$ python3 -m venv myvenv
+
+### hata verdi 
+
+$ apt-get update
+sudo apt install python3-venv
+
+### python3.6 installation
+
+$ wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz
+$ tar -xvf Python-3.6.3.tgz
+$ cd Python-3.6.3
+$ sudo ./configure --enable-optimizations
+
+$ sudo make -j8
+$ sudo make install
+
+
+$virtualenv --python=python3.6 myvenv
+
+
+tuuba@tuuba:~/Downloads/djangogirls/myvenv$ source bin/activate
+
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls/myvenv$
+
+##upgrade pip
+(myvenv) ~$ python3 -m pip install --upgrade pip
+
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ touch requirements.txt
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ echo "Django~=2.0.6" > requirements.txt 
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ cat requirements.txt 
+Django~=2.0.6
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ pip install -r requirements.txt
+
+
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ django-admin startproject mysite .(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ 
+
+
+2054  pip3 install _sqlite3
+ 2055  pip3 install pysqlite3 
+ 2056  python3 manage.py migrate
+ 2057  sudo apt-get install libsqlite3-dev
+ 2058  python3 manage.py migrate
+ 2059  sudo apt install build-essential checkinstall
+ 2060  sudo apt-get install libsqlite3-dev
+ 2061  sudo apt install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+ 2062  python3 manage.py migrate
+
+
+
+## bunu yapmadım yüklediğim için  yum -y install sqlite-devel
+2、cd  Python-3.6     
+3、./configure --enable-loadable-sqlite-extensions 
+4、sudo make 
+5. sudo make install
+
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ python3 manage.py migrate
+
+#ayrı tab açıp, virenv başlattım
+
+
+(myvenv) ~/djangogirls$ python manage.py startapp blog
+
+(myvenv) tuuba@tuuba:~/Downloads/djangogirls$ python manage.py makemigrations blog
+
+#dosyalarda değişiklikler yapıldı ara adımlarda
+(myvenv) ~/djangogirls$ python manage.py createsuperuser
+
